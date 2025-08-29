@@ -1,0 +1,35 @@
+﻿@using WebApp.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Category
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@* @{
+    Layout = "_Layout";
+} *@
+
+@section title{
+    @if(Model != null)
+    {
+        <h1>Categories : @Model.Name</h1>
+    }
+}
+
+
+<form method="post" class="p-3 border rounded shadow-sm bg-light" asp-controller="categories" asp-action="edit">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label fw-bold"></label>
+        <input asp-for="Name" class="form-control" placeholder="Enter name" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label fw-bold"></label>
+        <input asp-for="Description" class="form-control" placeholder="Enter description" />
+    </div>
+
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+
